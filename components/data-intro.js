@@ -1,46 +1,84 @@
-export default function DataIntro({ changeHandler }) {
+export default function DataIntro({ changeHandler, countires, startYear, endYear }) {
   return (
-    <div className="row">
+    <div >
       <div className="item intro">
         <div className="content">
-          <strong>This is an app to discover football data.</strong>
+          <strong>Discover Laureates</strong>
         </div>
       </div>
-      <div className="item intro">
-        <div className="row">
+      <div className="filtering-area">
+        <div className="item intro filters">
           <div className="item control-container">
             <div className="content">
-              <div className="row">
+              <div >
                 <div className="item control">
-                  <div>Sort</div>
+                  <div>From year</div>
                 </div>
-                <div className="item control">
-                  <select id="data-sort" onChange={changeHandler}>
-                    <option value="a-z">A to Z</option>
-                    <option value="z-a">Z to A</option>
-                  </select>
-                </div>
+                <input type="number" className="item control input" value={startYear} id="start-year" step="1" min="1900" max="2022" onChange={changeHandler} />
               </div>
             </div>
           </div>
           <div className="item control-container">
             <div className="content">
-              <div className="row">
+              <div className="item control">
+                <div>To year</div>
+              </div>
+              <div>
+                <input type="number" className="item control input" value={endYear} id="end-year" step="1" min={startYear} max="2022" onChange={changeHandler}>
+                </input>
+              </div>
+            </div>
+          </div>
+          <div className="item control-container">
+            <div className="content">
+              <div >
                 <div className="item control">
-                  <div>Filter</div>
+                  <div>Order</div>
                 </div>
+                <select id="data-sort" className="item control input" onChange={changeHandler}>
+                  <option value="ascending">Descending</option>
+                  <option value="descending">Ascending</option>
+                </select>
+              </div>
+            </div>
+          </div>
+          <div className="item control-container">
+            <div className="content">
+              <div >
                 <div className="item control">
-                  <select id="data-filter" onChange={changeHandler}>
-                    <option value="-">n/a</option>
-                    <option value="pre-1980">Pre 1980 teams</option>
-                    <option value="post-1980">Post 1980 teams</option>
-                  </select>
+                  <div>Category</div>
                 </div>
+                <select id="category-filter" className="item control input" onChange={changeHandler}>
+                  <option>All</option>
+                  <option>Chemistry</option>
+                  <option>Peace</option>
+                  <option>Literature</option>
+                  <option>Physics</option>
+                  <option>Physiology or Medicine</option>
+                  <option>Economic Sciences</option>
+                </select>
+              </div>
+            </div>
+          </div>
+          <div className="item control-container">
+            <div className="content">
+              <div >
+                <div className="item control">
+                  <div>Country</div>
+                </div>
+                <select id="country-filter" className="item control input" onChange={changeHandler}>
+                  <option>All</option>
+                  {countires.map(option => (
+                    <option key={option} value={option}>
+                      {option}
+                    </option>
+                  ))}
+                </select>
               </div>
             </div>
           </div>
         </div>
       </div>
-    </div>
+    </div >
   )
 }
