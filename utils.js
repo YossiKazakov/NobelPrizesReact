@@ -57,10 +57,10 @@ export function filterDataCategory(data, key) {
 export function sortDataYear(data, key) {
   const sorted = data.sort((a, b) => {
     if (a.year > b.year) {
-      return key === "ascending" ? -1 : 1
+      return key === "ascending" ? 1 : -1
     }
     if (a.year < b.year) {
-      return key === "ascending" ? 1 : -1
+      return key === "ascending" ? -1 : 1
     }
   })
   return sorted

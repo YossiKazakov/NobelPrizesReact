@@ -2,7 +2,7 @@ export default function DataIntro({ changeHandler, countires, startYear, endYear
   return (
     <div >
       <div className="item intro">
-        <div className="content">
+        <div className="data-header">
           <strong>Discover Laureates</strong>
         </div>
       </div>
@@ -35,8 +35,8 @@ export default function DataIntro({ changeHandler, countires, startYear, endYear
                 <div>Order</div>
               </div>
               <select id="data-sort" className="item control input" onChange={changeHandler}>
-                <option value="ascending">Descending</option>
-                <option value="descending">Ascending</option>
+                <option value="ascending">Ascending</option>
+                <option value="descending">Descending</option>
               </select>
             </div>
           </div>

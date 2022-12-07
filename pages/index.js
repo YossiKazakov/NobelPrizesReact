@@ -13,11 +13,11 @@ export default function IndexPage() {
 
   const { data, isLoading, isError } = useLaureatesData();
 
-  const [sortKey, setSortKey] = useState("descending");
+  const [sortKey, setSortKey] = useState("ascending");
   const [categoryFilterKey, setCategoryFilterKey] = useState("All");
   const [countryFilterKey, setCountryFilterKey] = useState("All");
   const [startYearFilterKey, setStartYearFilterKey] = useState(1901)
-  const [endYearFilterKey, setEndYearFilterKey] = useState(startYearFilterKey + 1)
+  const [endYearFilterKey, setEndYearFilterKey] = useState(2022)
 
   function getDataQueryKeys(event) {
     if (event.target.id === "data-sort") {
