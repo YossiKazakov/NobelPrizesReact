@@ -3,7 +3,7 @@ export default function DataIntro({ changeHandler, countires, startYear, endYear
     <div >
       <div className="item intro">
         <div className="data-header">
-          <strong>DiscoSver Laureates</strong>
+          <strong>Discover Laureates</strong>
         </div>
       </div>
       <div className="item intro filters">
